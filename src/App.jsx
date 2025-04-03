@@ -33,8 +33,12 @@ const App = () => {
   const handleClick = (event) => {
     // Get the event which triggered it get its text Content
     const action = event.target.textContent; // Button ke andar ka text nikalna
-    setValue((prevValue) =>
-      action === "Increment" ? prevValue + 1 : prevValue - 1
+    setValue(
+      (prevValue) => (action === "Increment" ? prevValue + 1 : --prevValue)
+
+      // NOTE - 👿👿👿👿👿👿🙅🏼‍♂️🙅🏼‍♀️🙅🏼‍♀️🙅🏼‍♀️👿Postfix decrement (prevValue--) ka effect next line pe hoga,
+      // lekin yahan return hone ke baad woh update hoga, is wajah se correct value return nahi hogi.
+      // Isliye prefix decrement (--prevValue) use kiya hai jo pehle value ko update karega aur wahi return hoga.
     );
   };
 
