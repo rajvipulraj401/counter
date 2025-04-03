@@ -31,6 +31,7 @@ const App = () => {
   const [value, setValue] = useState(0);
 
   const handleClick = (event) => {
+    // Get the event which triggered it get its text Content
     const action = event.target.textContent; // Button ke andar ka text nikalna
     setValue((prevValue) =>
       action === "Increment" ? prevValue + 1 : prevValue - 1
